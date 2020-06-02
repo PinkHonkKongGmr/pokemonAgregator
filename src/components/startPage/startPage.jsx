@@ -18,11 +18,16 @@ const StartPage = () => {
     }, [count]);
 
     return (
-        <div>
-            <h1>hello!</h1>
+        <div className="main_container">
+            <div className="logo-box">
+                <img src={require('../../assets/pokelogo.png').default} />
+            </div>
+
+            <div className="button-box">
+                <button onClick={() => dispatch(goBack())}>previosly</button>
+                <button onClick={() => dispatch(goForward())}>next</button>
+            </div>
             <PokemonList list={pokemons} />
-            <button onClick={() => dispatch(goBack())}>previosly</button>
-            <button onClick={() => dispatch(goForward())}>next</button>
         </div>
     );
 };

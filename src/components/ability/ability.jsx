@@ -22,10 +22,19 @@ const Ability = () => {
         };
         localStorage.setItem('reserveData', JSON.stringify(reserveData));
         return (
-            <div>
-                <div>name:{data.name}</div>
-                <div>discription:{data.effect_entries[0].effect}</div>
-                <div>effect:{data.effect_entries[0].short_effect}</div>
+            <div className="ability-box">
+                <div>
+                    <span className="name">name:</span>
+                    {data.name}
+                </div>
+                <div>
+                    <span className="discription">discription:</span>
+                    {data.effect_entries[0].effect}
+                </div>
+                <div>
+                    <span className="effect">effect:</span>
+                    {data.effect_entries[0].short_effect}
+                </div>
                 <div>
                     <Link to={abilityUrlBack}>Назад к покемону</Link>
                 </div>
@@ -36,10 +45,19 @@ const Ability = () => {
             const reserveData = JSON.parse(localStorage.getItem('reserveData'));
 
             return (
-                <div>
-                    <div>name:{reserveData.name}</div>
-                    <div>discription:{reserveData.discription}</div>
-                    <div>effect:{reserveData.effect}</div>
+                <div className="ability-box">
+                    <div>
+                        <span className="name">name:</span>
+                        {reserveData.name}
+                    </div>
+                    <div>
+                        <span className="discription">discription:</span>
+                        {reserveData.discription}
+                    </div>
+                    <div>
+                        <span className="effect">effect:</span>
+                        {reserveData.effect}
+                    </div>
                     <div>
                         <Link to="/">На главную</Link>
                     </div>

@@ -9,18 +9,24 @@ const PokemonList = (props) => {
     const mapPokemonsToDom = list.map((el, ind) => {
         const link = `/pokemon/${el}`;
         return (
-            <div key={ind}>
-                <div>
-                    <img src={require('../../assets/pokemon.jpg').default} />
+            <div key={ind} className="flip-container">
+                <div className="flipper">
+                    <Link to={link}>
+                        <div className="pokemon_box">
+                            <div className="pokemon-name">{el[0].toUpperCase() + el.slice(1)}</div>
+                        </div>
+                    </Link>
                 </div>
-                <Link to={link}>{el}</Link>
             </div>
         );
     });
     return (
         <>
-            <input type="text" onInput={filtration} />
-            {mapPokemonsToDom}
+            <div className="input-box">
+                {' '}
+                <input type="text" onInput={filtration} placeholder="поиск по покемону" />
+            </div>
+            <div className="pokemon_cards__wrapper">{mapPokemonsToDom}</div>
         </>
     );
 };

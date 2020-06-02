@@ -14,7 +14,7 @@ const Pokemon = (props) => {
     }, []);
     if (pokemonInfo.abilities) {
         const sprite = (
-            <div>
+            <div className="pokemon__info">
                 <img src={pokemonInfo.sprites.front_default} />
                 <img src={pokemonInfo.sprites.back_default} />
                 <div>Type: {pokemonInfo.types[0].type.name}</div>
@@ -27,7 +27,7 @@ const Pokemon = (props) => {
             const link = `/abilities/${el.ability.name}`;
             const linkback = `/pokemon/${pokemonInfo.name}`;
             return (
-                <li key={ind}>
+                <li className="pokemon_info_list" key={ind}>
                     <Link
                         to={link}
                         onClick={() => {
@@ -43,6 +43,7 @@ const Pokemon = (props) => {
             <div>
                 <h2>{props.id.toUpperCase()}</h2>
                 {sprite}
+                <h3>Способности:</h3>
                 <ul>{abilityList}</ul>
                 <Link to="/">На главную</Link>
             </div>

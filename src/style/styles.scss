@@ -1,3 +1,175 @@
 body {
-    background: yellowgreen;
+    background: linear-gradient(#9198e5, #e66465);
+    min-height: 100vh;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_container {
+    width: 1000px;
+    margin: auto;
+}
+
+.pokemon_cards__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.pokemon_box {
+    background-image: url('../assets/pokemon.jpg');
+    background-size: cover;
+    width: 300px;
+    height: 170px;
+    margin-bottom: 30px;
+    border-radius: 0.5rem;
+    justify-content: end;
+}
+
+
+.pokemon-name {
+    display: flex;
+    justify-content: flex-end;
+    padding: 11px;
+    color: rgb(236, 236, 19);
+
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+.flip-container {
+    perspective: 1000;
+}
+
+/* переверните сторону при проведении мышью */
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.button-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 17px;
+}
+
+.button-box button {
+    font-size: 20px;
+    padding: 4px;
+    width: 120px;
+    background-image: url('../assets/pokemon.png');
+    cursor: pointer;
+}
+
+.button-box button:nth-child(1) {
+    background-position: (-226px -51px);
+}
+
+.button-box button:nth-child(2) {
+    background-position: (-26px -50px);
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    margin: 16px
+}
+
+.input-box input {
+    font-size: 22px;
+    border-radius: 0.2rem;
+    border: 1px solid pink
+}
+
+.input-box input:focus {
+
+    background: rgb(246, 246, 2);
+    outline: 1px solid rgba(71, 13, 146, 0.2);
+    border: 1px solid rgba(71, 13, 146, 0.2);
+}
+
+.pokemon__info {
+    font-size: 20px;
+    padding: 18px;
+}
+
+
+.pokemon_info_list {
+    font-size: 22px;
+    list-style: none;
+}
+
+.ability-box {
+    font-size: 20px;
+    padding: 7px;
+}
+
+.ability-box div {
+    margin-bottom: 12px;
+}
+
+.name {
+    color: red;
+    padding: 7px;
+}
+
+.discription {
+    color: yellow;
+    padding: 7px;
+}
+
+.effect {
+    color: blue;
+    padding: 7px;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+
+
+.front,
+.back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.front {
+    z-index: 2;
+}
+
+/* обратная, изначально скрытая сторона */
+.back {
+    transform: rotateY(180deg);
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .main_container {
+        width: 800px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main_container {
+        width: 90%;
+        margin: auto;
+    }
 }
