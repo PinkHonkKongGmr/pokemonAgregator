@@ -79,7 +79,6 @@ module.exports = {
     output: {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
     },
     resolve: {
         extensions: ['.js', '.json', '.png'],
